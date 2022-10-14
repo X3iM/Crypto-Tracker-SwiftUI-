@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CoinViewRow: View {
+struct CoinRowView: View {
     let coin: CoinModel
     let showHoldingsColumn: Bool
     
@@ -26,20 +26,20 @@ struct CoinViewRow: View {
 
 struct CoinViewRow_Previews: PreviewProvider {
     static var previews: some View {
-        CoinViewRow(coin: dev.coin, showHoldingsColumn: true)
+        CoinRowView(coin: dev.coin, showHoldingsColumn: true)
             .previewLayout(.sizeThatFits)
     }
 }
 
 
-extension CoinViewRow {
+extension CoinRowView {
     private var leftColumn: some View {
         HStack(spacing: 0) {
             Text("\(coin.rank)")
                 .font(.caption)
                 .foregroundColor(Color.theme.secondaryText)
                 .frame(minWidth: 30)
-            Circle()
+            CoinImageView(coin: coin)
                 .frame(width: 30, height: 30)
             Text(coin.symbol?.uppercased() ?? "")
                 .font(.headline)
