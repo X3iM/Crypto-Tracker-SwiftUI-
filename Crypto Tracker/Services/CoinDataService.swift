@@ -10,7 +10,7 @@ import Combine
 
 class CoinDataService {
     
-    private var urlString = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=25&page=1&sparkline=true&price_change_percentage=24h"
+    private var urlString = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&page=1&sparkline=true&price_change_percentage=24h"
     
     @Published var allCoins: [CoinModel] = []
     var coinSubscription: AnyCancellable?
